@@ -6,32 +6,23 @@ import { Provider } from 'react-redux';
 
 
 const initialState = { tech: "React 2.0.1" };
-
 const reducer=(state)=> state
-
 const store = createStore(reducer, initialState);  
 
 
 function HelloWorld(props){
-
   return(
     <p>hello {props.tech}</p>
   )
-
 }
 
 class App extends Component {
-
-
  render() {
-
-  //return <HelloWorld tech={"store"}/>
    return <HelloWorld tech={this.props.tech}/>
  }
 }
 
-
- const mapStateToProps = function(state) {
+const mapStateToProps = function(state) {
   return {
     tech: state.tech,
   }
